@@ -62,7 +62,7 @@ window.addEventListener('scroll', () => {
     try {
         const heroH1Spans = document.querySelectorAll('.home-content h1 span');
 
-        if (heroH1Spans[0]) heroH1Spans[0].textContent = 'Arun Fernando';
+        if (heroH1Spans[0]) heroH1Spans[0].textContent = '';
 
         if (heroH1Spans[1]) heroH1Spans[1].textContent = 'Fernando';
     } catch (err) {
