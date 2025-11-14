@@ -34,3 +34,25 @@ navLinks.forEach(link => {
 });
 
 
+window.addEventListener('scroll', () => {
+    // close mobile menu if open
+    if (navbar.classList.contains('open')) {
+        navbar.classList.remove('open');
+        menuIcon.classList.remove('bx-x');
+    }
+
+
+    const scrollPos = window.scrollY || window.pageYOffset;
+    sections.forEach(sec => {
+        const offset = sec.offsetTop - 160;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (scrollPos >= offset && scrollPos < offset + height) {
+            navLinks.forEach(a => a.classList.remove('active'));
+            const active = document.querySelector(`.navbar a[href="#${id}"]`);
+            if (active) active.classList.add('active');
+        }
+    });
+});
+
+
