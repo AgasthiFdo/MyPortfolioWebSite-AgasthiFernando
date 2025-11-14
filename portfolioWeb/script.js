@@ -56,3 +56,30 @@ window.addEventListener('scroll', () => {
 });
 
 
+(function fillHeroSpans() {
+
+
+    try {
+        const heroH1Spans = document.querySelectorAll('.home-content h1 span');
+
+        if (heroH1Spans[0]) heroH1Spans[0].textContent = 'Arun Fernando';
+
+        if (heroH1Spans[1]) heroH1Spans[1].textContent = 'Fernando';
+    } catch (err) {
+
+        console.warn('Hero spans fill skipped:', err);
+    }
+})();
+
+
+menuIcon.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        menuIcon.click();
+    }
+});
+
+
+window.addEventListener('load', () => {
+
+    window.dispatchEvent(new Event('scroll'));
+});
